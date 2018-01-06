@@ -28,3 +28,19 @@ class Pracownik(models.Model):
     dataZatrudnienia = models.DateField()
     pesel = models.CharField(max_length=11)
     idRolaPracownika = models.ForeignKey(RolaPracownika, on_delete=models.CASCADE)
+
+
+#encje asocjacyjne
+
+class PracownikZamowienie(models.Model):
+    idPracownik = models.ForeignKey(Pracownik, on_delete=models.CASCADE)
+    idZamowienie = models.ForeignKey(Zamowienie, on_delete=models.CASCADE)
+
+class ZamowienieKlient(models.Model):
+    idZamowienie = models.ForeignKey(Zamowienie, on_delete=models.CASCADE)
+    idKlient = models.ForeignKey(Klient, on_delete=models.CASCADE)
+
+class ZamowienieProdukt(models.Model):
+    idZamowienie = models.ForeignKey(Zamowienie, on_delete=models.CASCADE)
+    idProdukt = models.ForeignKey(Produkt, on_delete=models.CASCADE)
+    ilosc = models.IntegerField()
