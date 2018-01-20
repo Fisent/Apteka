@@ -21,5 +21,5 @@ from apteka_app import urls
 urlpatterns = [
     url(r'admin/', admin.site.urls),
     url(r'apteka/', include('apteka_app.urls')),
-    url(r'^', include('apteka_app.urls'))
+    url(r'', include('apteka_app.urls'))
 ]
