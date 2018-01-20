@@ -18,6 +18,7 @@ class Produkt(models.Model):
     nazwa = models.CharField(max_length=100)
     opis = models.CharField(max_length=1000)
     cena = models.IntegerField(null=True)
+    nazwa_ikony = models.CharField(max_length=100, null=True)
 
 class RolaPracownika(models.Model):
     nazwaRoli = models.CharField(max_length=20)

@@ -15,7 +15,7 @@
 </tr>
 <tr style="height: 302.467px;">
 <td style="width: 400px; height: 302.467px;">&nbsp;</td>
-<td style="width: 791.833px; height: 302.467px;"><table>{% for produkt in produkty %}<tr><td>{{produkt}}</td></tr>{% endfor %} </table>
+<td style="width: 791.833px; height: 302.467px;"><table>{% for produkt in produkty %}<tr><td><img src="/static/apteka_app/{{produkt.nazwa_ikony}}"><br>{{produkt.opis}}<br>{{produkt.cena}}.00 zł</td></tr>{% endfor %} </table>
 </td>
 <td style="width: 274.167px; height: 302.467px;">
 <table style="width: 141.317px; border-color: black; margin-left: auto; margin-right: auto;" border="1">
