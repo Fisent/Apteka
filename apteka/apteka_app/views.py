@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apteka_app.models import Produkt, Zamowienie, ZamowienieProdukt
+from apteka_app.models import Produkt, Zamowienie, ZamowienieProdukt, ZamowienieKlient
 from django.http import HttpResponse
 
 
@@ -15,7 +15,7 @@ def zamowienie(request, id):
     return render(request, 'apteka_app/zamowienie.html', {'zamowienie':Zamowienie.objects.get(pk=id), 'zam_prod':zam_prod})
 
 def produkt(request, id):
-    return HttpResponse('produkt: ' + (Produkt.objects.get(pk=id)).nazwa)
+    return render(request, 'apteka_app/produkt.html', {'produkt':Produkt.objects.get(pk=id)})
 
 def zamow_produkt(request, id, ilosc_arg):
     zam_prod = ZamowienieProdukt(idZamowienie=Zamowienie.objects.get(pk=1), idProdukt=Produkt.objects.get(pk=id), ilosc=ilosc_arg)
@@ -24,3 +24,10 @@ def zamow_produkt(request, id, ilosc_arg):
 
 def zloz_zamowienie(request, zamowienie_id):
     return HttpResponse('zlozone')
+
+def historia_zamowien(request, id_uzytkownik):
+    zam_prod = ZamowienieKlient.objects.filter(idKlient=id_uzytkownik)
+    zamowienia = []
+    for zp in zam_prod:
+        zamowienia.append(zp.idZamowienie)
+    return render(request, 'apteka_app/historia_zamowien.html', {'zamowienia':zamowienia})

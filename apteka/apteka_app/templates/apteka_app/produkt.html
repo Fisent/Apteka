@@ -16,16 +16,17 @@
 <p><a href="apteka/">Strona gł&oacute;wna</a></p>
 <hr /></td>
 <td style="width: 274.167px; height: 62px;">
-<p>Koszyk</p>
+<p><a href="/zamowienie/1">Koszyk</a></p>
 <hr /></td>
 </tr>
 <tr style="height: 302.467px;">
 <td style="width: 400px; height: 302.467px;">&nbsp;</td>
-<td style="width: 791.833px; height: 302.467px;">Produkty w zam&oacute;wieniu:<br /><br /><table>{% for produkt in zam_prod %}
-<table>
+<td style="width: 791.833px; height: 302.467px;">
+<table style="border-color: black;" border="1">
 <tbody>
 <tr>
-<td>{{forloop.counter}}.{{produkt.idProdukt}}_____________ilość: {{produkt.ilosc}}____cena: {{produkt.cena}}</td>{% endfor %}
+<td><img src="/static/apteka_app/{{produkt.nazwa_ikony}}" /></td>
+<td><strong>Produkt: {{produkt.nazwa}}</strong> <br /> Opis: {{produkt.opis}} <br /> Cena: {{produkt.cena}}</td>
 </tr>
 </tbody>
 </table>

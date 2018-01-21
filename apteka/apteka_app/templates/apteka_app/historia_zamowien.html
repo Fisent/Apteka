@@ -15,11 +15,16 @@
 </tr>
 <tr style="height: 302.467px;">
 <td style="width: 400px; height: 302.467px;">&nbsp;</td>
-<td style="width: 791.833px; height: 302.467px;">{% for produkt in produkty %}
+<td style="width: 791.833px; height: 302.467px;">{% for zamowienie in zamowienia %}
 <table style="border-color: black;" border="1">
 <tbody>
 <tr>
-<td><img src="/static/apteka_app/{{produkt.nazwa_ikony}}" /><br /><br /><br /></td>
+<td> Zamowienie nr: {{zamowienie.id}}<br>
+    Data zamowienia: {{zamowienie.dataZamowienia}}<br>
+    oplacone: {{zamowienie.oplacone}}<br>
+    sposobZaplaty: {{zamowienie.sposobZaplaty}}<br>
+    sposobWysylki: {{zamowienie.sposobWyslki}}<br>
+    adresWysylki: {{zamowienie.adresWysylki}}<br /><br /><br /></td>
 </tr>
 </tbody>
 </table>
