@@ -11,11 +11,19 @@
 <tr style="height: 62px;">
 <td style="width: 400px; height: 62px; text-align: left;">MENU</td>
 <td style="width: 791.833px; height: 62px;"><a href="apteka/">Strona główna</a></td>
-<td style="width: 274.167px; height: 62px;">Koszyk </td>
+<td style="width: 274.167px; height: 62px;"><a href="zamowienie/{{zamowienie.id}}">Złoż zamówienie</a>/td>
 </tr>
 <tr style="height: 302.467px;">
 <td style="width: 400px; height: 302.467px;">&nbsp;</td>
-<td style="width: 791.833px; height: 302.467px;">Produkty w zamówieniu:<br><br> <table>{% for produkt in zam_prod %}<tr><td>{{forloop.counter}}.{{produkt.idProdukt}}<tab><tab>_____________ilość: {{produkt.ilosc}}____cena: {{produkt.cena}}</td></tr>{% endfor %} </table>
+<td style="width: 791.833px; height: 302.467px;">{% for produkt in produkty %}
+<table style="border-color: black;" border="1">
+<tbody>
+<tr>
+<td><img src="/static/apteka_app/{{produkt.nazwa_ikony}}" /><br /><br /><br /></td>
+</tr>
+</tbody>
+</table>
+{% endfor %}
 </td>
 <td style="width: 274.167px; height: 302.467px;">
 <table style="width: 141.317px; border-color: black; margin-left: auto; margin-right: auto;" border="1">

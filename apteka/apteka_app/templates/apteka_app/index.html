@@ -10,12 +10,20 @@
 </tr>
 <tr style="height: 62px;">
 <td style="width: 400px; height: 62px; text-align: left;">MENU</td>
-<td style="width: 791.833px; height: 62px;">LINK("strona gł&oacute;wna")</td>
-<td style="width: 274.167px; height: 62px;">Koszyk </td>
+<td style="width: 791.833px; height: 62px;"><a href=''>Strona główna</a></td>
+<td style="width: 274.167px; height: 62px;"><a href="zamowienie/{{zamowienie.id}}">Koszyk</a>
 </tr>
 <tr style="height: 302.467px;">
 <td style="width: 400px; height: 302.467px;">&nbsp;</td>
-<td style="width: 791.833px; height: 302.467px;"><table>{% for produkt in produkty %}<tr><td><img src="/static/apteka_app/{{produkt.nazwa_ikony}}"><br>{{produkt.opis}}<br>{{produkt.cena}}.00 zł</td></tr>{% endfor %} </table>
+<td style="width: 791.833px; height: 302.467px;">{% for produkt in produkty %}
+<table style="border-color: black;" border="1">
+<tbody>
+<tr>
+<td><img src="/static/apteka_app/{{produkt.nazwa_ikony}}" /><br /><strong><a href="/produkt/{{produkt.id}}">{{produkt.nazwa}}</a></strong><br />{{produkt.opis}}<br />{{produkt.cena}}.00 zł<br /><br /></td>
+</tr>
+</tbody>
+</table>
+{% endfor %}
 </td>
 <td style="width: 274.167px; height: 302.467px;">
 <table style="width: 141.317px; border-color: black; margin-left: auto; margin-right: auto;" border="1">
