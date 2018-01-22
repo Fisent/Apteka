@@ -8,11 +8,12 @@ class Klient(models.Model):
 
 
 class Zamowienie(models.Model):
+    zatwierdzone = models.BooleanField(default=False)
     dataZamowienia = models.DateField()
     oplacone = models.BooleanField()
-    sposobZaplaty = models.CharField(max_length=100)
-    sposobWysylki = models.CharField(max_length=100)
-    adresWysylki = models.CharField(max_length=100)
+    sposobZaplaty = models.CharField(max_length=100, null=True)
+    sposobWysylki = models.CharField(max_length=100, null=True)
+    adresWysylki = models.CharField(max_length=100, null=True)
 
     def cena(self):
         counter = 0
@@ -26,7 +27,7 @@ class Produkt(models.Model):
     nazwa = models.CharField(max_length=100)
     opis = models.CharField(max_length=1000)
     cena = models.IntegerField(null=True)
-    nazwa_ikony = models.CharField(max_length=100, null=True)
+    nazwa_ikony = models.CharField(max_length=100)
 
     def __str__(self):
         return self.nazwa

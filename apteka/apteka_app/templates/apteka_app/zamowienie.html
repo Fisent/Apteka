@@ -13,7 +13,7 @@
 <p>MENU</p>
 <hr /></td>
 <td style="width: 791.833px; height: 62px;">
-<p><a href="apteka/">Strona gł&oacute;wna</a></p>
+<p><a href="/apteka/">Strona gł&oacute;wna</a></p>
 <hr /></td>
 <td style="width: 274.167px; height: 62px;">
 <p>Koszyk</p>
@@ -28,8 +28,19 @@
 <td>{{forloop.counter}}.{{produkt.idProdukt}}_____________ilość: {{produkt.ilosc}}____cena: {{produkt.cena}}</td>{% endfor %}
 </tr>
 </tbody>
-</table>
+<tr><td>
+<form action="/zamowienie/{{id}}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
 </td>
+</tr>
+
+</table>
+<a href="/zloz_zamowienie/1">Złóż zamówienie</a>
+</td>
+
 <td style="width: 274.167px; height: 302.467px;">
 <table style="width: 141.317px; border-color: black; margin-left: auto; margin-right: auto;" border="1">
 <tbody>
