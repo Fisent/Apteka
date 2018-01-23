@@ -21,26 +21,20 @@
 </tr>
 <tr style="height: 302.467px;">
 <td style="width: 400px; height: 302.467px;">&nbsp;</td>
-<td style="width: 791.833px; height: 302.467px;">Produkty w zam&oacute;wieniu:<br /><br /><table>{% for produkt in zam_prod %}
+<td style="width: 791.833px; height: 302.467px;">Produkty w zam&oacute;wieniu:<br /><br />{% for produkt in zam_prod %}Zł&oacute;ż zam&oacute;wienie
 <table>
 <tbody>
 <tr>
 <td>{{forloop.counter}}.{{produkt.idProdukt}}_____________ilość: {{produkt.ilosc}}____cena: {{produkt.cena}}</td>{% endfor %}
 </tr>
 </tbody>
-<tr><td>
-<form action="/zamowienie/{{id}}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-</form>
-</td>
+<tbody>
+<tr>
+<td>&nbsp;</td>
 </tr>
-
+</tbody>
 </table>
-<a href="/zloz_zamowienie/1">Złóż zamówienie</a>
 </td>
-
 <td style="width: 274.167px; height: 302.467px;">
 <table style="width: 141.317px; border-color: black; margin-left: auto; margin-right: auto;" border="1">
 <tbody>
@@ -69,6 +63,16 @@
 </table>
 </td>
 </tr>
+<tr style="height: 302.467px;">
+<td style="width: 400px; height: 302.467px;">&nbsp;</td>
+<td style="width: 791.833px; height: 302.467px;">    </td>
+<td style="width: 274.167px; height: 302.467px;">&nbsp;</td>
+</tr>
 </tbody>
 </table>
 <p>&nbsp;</p>
+<form action="/zamowienie/{{id}}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form> 

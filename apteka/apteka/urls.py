@@ -19,6 +19,7 @@ from django.urls import path
 from apteka_app import urls
 
 urlpatterns = [
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'admin/', admin.site.urls),
     url(r'apteka/', include('apteka_app.urls')),
     url(r'', include('apteka_app.urls'))

@@ -25,7 +25,7 @@ def zamowienie(request, id):
         return render(request, 'apteka_app/zamowienie.html', {'zamowienie':Zamowienie.objects.get(pk=id), 'zam_prod':zam_prod, 'form':form, 'id':id})
 
 def produkt(request, id):
-    return render(request, 'apteka_app/produkt.html', {'produkt':Produkt.objects.get(pk=id)})
+    return render(request, 'apteka_app/produkt.html', {'produkt':Produkt.objects.get(pk=id), 'id':id})
 
 def zamow_produkt(request, id, ilosc_arg):
     zam_prod = ZamowienieProdukt(idZamowienie=Zamowienie.objects.get(pk=1), idProdukt=Produkt.objects.get(pk=id), ilosc=ilosc_arg)
